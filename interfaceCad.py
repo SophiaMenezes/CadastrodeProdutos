@@ -22,30 +22,12 @@ def função_principal():
      linha4 = LineEdit_Quant.text()
      print(linha4)
 
-     if bot1.isChecked():
-          print('Categoria: Alimentos')
-     elif bot2.isChecked():
-          print('Categoria: Eletrodomésticos')
-     else:
-          print('Categoria: Eletrônicos \n')
-
 def chamarListaProdutos():
      interfaceList.show()
 
 cadastro = QLabel("Cadastro de Novo Produto", interfaceCad)
 cadastro.move(100,150) #eixo x, eixo y, largura e altura
 cadastro.setStyleSheet('font-size:15px')
-
-categoria = QLabel("Categoria", interfaceCad)
-categoria.move(100,360)
-categoria.setStyleSheet('font-size:15px')
-
-bot1 = QRadioButton("Alimentos",interfaceCad)
-bot1.setGeometry(200,360,150,20)
-bot2 = QRadioButton("Eletrodomésticos", interfaceCad)
-bot2.setGeometry(200,380,150,20)
-bot3 = QRadioButton("Eletrônicos", interfaceCad)
-bot3.setGeometry(200,400,150,20)
 
 LineEdit_Cod = QLineEdit("Código do Produto: ", interfaceCad)
 LineEdit_Cod.setGeometry(300,150,300,40)
