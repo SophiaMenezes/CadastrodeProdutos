@@ -8,6 +8,10 @@ interfaceCad = QWidget()
 interfaceCad.resize(800,600) #tam da janela alt/larg
 interfaceCad.setWindowTitle("Cadastro de Produtos")
 
+interfaceList = QWidget()
+interfaceList.resize(800,600) #tam da janela alt/larg
+interfaceList.setWindowTitle("Lista de Produtos")
+
 def função_principal():
      linha1 = LineEdit_Cod.text()
      print(linha1)
@@ -24,6 +28,9 @@ def função_principal():
           print('Categoria: Eletrodomésticos')
      else:
           print('Categoria: Eletrônicos \n')
+
+def chamarListaProdutos():
+     interfaceList.show()
 
 cadastro = QLabel("Cadastro de Novo Produto", interfaceCad)
 cadastro.move(100,150) #eixo x, eixo y, largura e altura
@@ -50,8 +57,12 @@ LineEdit_Quant = QLineEdit("Quantidade: ", interfaceCad)
 LineEdit_Quant.setGeometry(300,300,300,40)
 
 envio = QPushButton("Salvar", interfaceCad)
-envio.setGeometry(350, 500, 100, 50)
+envio.setGeometry(450, 500, 100, 50)
 envio.clicked.connect(função_principal)
+
+lista = QPushButton("Listar Produtos", interfaceCad)
+lista.setGeometry(250, 500, 100, 50)
+lista.clicked.connect(chamarListaProdutos)
 
 label = QLabel("Cadastro de Produtos", interfaceCad)
 label.move(300,45) #larg, alt
